@@ -1,0 +1,21 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+  script.
+    let sendMessage = () => {
+      let message = JSON.stringify({ message: document.getElementById('message').value })
+      fetch("http://127.0.0.1:3000/add", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: message
+      }).then(res => {
+          console.log("Request complete! response:", res);
+      });
+    }
+  ul
+    each item in data
+      li= item
+    input(type="text" id="message")
+    button(onclick='sendMessage()')
