@@ -4,18 +4,71 @@ block content
   h1= title
   p Welcome to #{title}
   script.
-    let sendMessage = () => {
-      let message = JSON.stringify({ message: document.getElementById('message').value })
-      fetch("http://127.0.0.1:3000/add", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: message
-      }).then(res => {
-          console.log("Request complete! response:", res);
-      });
+    function sendMessage() {
+      let messageText = document.getElementById('messageText').value
+      let messageAuthor = document.getElementById('messageAuthor').value
+
+      postMessage(messageText, messageAuthor)
+        .then(response => fillList(response))
+        .catch(err => console.error(err))
+      
+      //- var node = document.createElement('LI')
+      //- var textNode = document.createTextNode(message)
+      //- node.appendChild(textNode)
+      //- var list = document.getElementById('dataList')
+      //- list.appendChild(node)
     }
-  ul
-    each item in data
-      li= item
-    input(type="text" id="message")
-    button(onclick='sendMessage()')
+
+    async function postMessage(text, author) {
+      let messageJSON = JSON.stringify({
+        text, 
+        author,
+        posX: 100,
+        posY: 100,
+      })
+      console.log(messageJSON)
+      let response = await fetch("http://127.0.0.1:3000/add", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: messageJSON
+      })
+      let jsonResponse = response.json()
+      return jsonResponse
+    }
+
+    function updateData() {
+      requestData()
+        .then(data => fillList(data))
+        .catch(err => console.log(err))
+
+      async function requestData() {
+        let response = await fetch("http://127.0.0.1:3000/data")
+        let jsonResponse = response.json()
+        return jsonResponse
+      }
+    }
+
+
+    function fillList(data) {
+      console.log('data', data)
+      var list = document.getElementById('dataList')
+      while (list.firstChild) {
+        list.removeChild(list.firstChild);
+      }
+      for (let item in data.data) {
+        console.log(data.data[item])
+        let node = document.createElement('LI')
+        let textNode = document.createTextNode(data.data[item]['text'].toString() + ' - ' + data.data[item]['author'].toString())
+        node.appendChild(textNode)
+        list.append(node)
+      }
+    }
+  ul(id='dataList')
+  text message:
+  input(type="text" id="messageText")
+  text author:
+  input(type='text', id='messageAuthor')
+  button(onclick='sendMessage()')
+  script.
+    updateData()
+
