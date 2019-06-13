@@ -7,8 +7,8 @@ var data = [
     author: 'Miles',
     date: '13-06-19',
     time: '15:23',
-    posX: 100,
-    posY: 100
+    posX: 0,
+    posY: 0
   }
 ]
 

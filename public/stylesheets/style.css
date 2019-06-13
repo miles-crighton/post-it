@@ -6,3 +6,20 @@ body {
 a {
   color: #00B7FF;
 }
+
+#messageBoard {
+  width: 500px;
+  height: 350px;
+  position: relative;
+  background-color: lightblue;
+  overflow: hidden;
+}
+
+.message {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background: salmon;
+  margin: 10px;
+  border: 3px solid grey;
+}
