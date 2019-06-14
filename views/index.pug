@@ -2,13 +2,17 @@ extends layout
 
 block content
   h1= title
-  p Welcome to #{title}
+  p Write a message and post it on the board.
   script(src='/javascripts/index.js')
   text message:
   input(type="text" id="messageText")
   text author:
-  input(type='text', id='messageAuthor')
-  button(onclick='sendMessage()')
+  input(type='text', id='messageAuthor', placeholder='Anonymous')
+  text X:
+  input(type='number', id='messageX')
+  text Y:
+  input(type='number' id='messageY')
+  button(onclick='sendMessage()') Post!
   div(id='messageBoard')
   script.
     updateData()

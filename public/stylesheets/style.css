@@ -7,11 +7,17 @@ a {
   color: #00B7FF;
 }
 
+input {
+  display: block;
+}
+
 #messageBoard {
-  width: 500px;
-  height: 350px;
+  width: 800px;
+  height: 550px;
+  margin: 10px;
   position: relative;
-  background-color: lightblue;
+  background-color: chocolate;
+  border: 3px solid black;
   overflow: hidden;
 }
 
@@ -19,7 +25,34 @@ a {
   position: absolute;
   width: 100px;
   height: 100px;
-  background: salmon;
+  background: rgb(249, 134, 121);
+  overflow: hidden;
+  border-bottom-right-radius: 10px;
   margin: 10px;
-  border: 3px solid grey;
+  box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.2), 0 5px 10px 0 rgba(0, 0, 0, 0.08);
 }
+
+.message::before {
+  content: '';
+  position: absolute;
+  transform: rotate(45deg);
+  border-top-left-radius: 7px;
+  right: -10px;
+  bottom: -20px;
+  width: 30px;
+  height: 25px;
+  background-color: rgb(205, 93, 81);
+}
+
+.message::after {
+  content: '';
+  position: absolute;
+  border-bottom-right-radius: 25px;
+  right: 8px;
+  bottom: -1px;
+  width: 10px;
+  height: 10px;
+  background-color: red;
+  background: rgb(249, 134, 121);
+}
+

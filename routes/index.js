@@ -2,14 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 var data = [
-  {
-    text: 'Hello, world!',
-    author: 'Miles',
-    date: '13-06-19',
-    time: '15:23',
-    posX: 0,
-    posY: 0
-  }
+   { text: 'Hello, world', author: 'Miles', date: '13-06-19', time: '15:23', posX: 0, posY: 0 }
 ]
 
 /* GET home page. */

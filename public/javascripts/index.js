@@ -1,17 +1,15 @@
 function sendMessage() {
     let messageText = document.getElementById('messageText').value
     let messageAuthor = document.getElementById('messageAuthor').value
+    let messageX = document.getElementById('messageX').value
+    let messageY = document.getElementById('messageY').value
 
-    postMessage(messageText, messageAuthor)
+    postMessage(messageText, messageAuthor, messageX, messageY)
         .then(response => fillList(response))
         .catch(err => console.error(err))
 }
 
-var posX = 0, posY = 0
-
-async function postMessage(text, author) {
-    posX += 100
-    posY += 100
+async function postMessage(text, author, posX, posY) {
     let messageJSON = JSON.stringify({
         text,
         author,
@@ -50,8 +48,12 @@ function fillList(data) {
         console.log(data.data[item])
         let node = document.createElement('DIV')
         node.className = 'message'
-        node.style.left = data.data[item]['posX'] + 'px'
-        node.top = data.data[item]['poxY'] + 'px'
+
+        let left = data.data[item].posX + 'px;';
+        let top = data.data[item].posY + 'px; ';
+        let style = 'margin-top: ' + top + 'margin-left: ' + left
+        node.setAttribute('style', style)
+        
         let textNode = document.createTextNode(data.data[item]['text'].toString() + ' - ' + data.data[item]['author'].toString())
         node.appendChild(textNode)
         list.append(node)
