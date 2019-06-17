@@ -11,6 +11,6 @@
     <code>npm install</code>
 
 <p>Start a local node.js server:</p>
-    </code>npm start</code>
+    <pre></code>npm start</code></pre>
 
 <p>You can then connect through a browser via local host on port 3000 (0.0.0.0:3000)</p>
