@@ -5,12 +5,12 @@
 
 <h3>To run locally</h3>
 <p>Clone the repository onto your local machine.</p>
-    git clone https://github.com/miles-crighton/post-it.git
+    <code>git clone https://github.com/miles-crighton/post-it.git</code>
 
 <p>Download the required npm modules:</p>
-    npm install
+    <code>npm install</code>
 
 <p>Start a local node.js server:</p>
-    npm start
+    </code>npm start</code>
 
 <p>You can then connect through a browser via local host on port 3000 (0.0.0.0:3000)</p>
