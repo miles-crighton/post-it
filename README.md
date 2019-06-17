@@ -1,4 +1,4 @@
-# post-it
+<h1>post-it</h1>
 <p>An application that allows you to share post-it messages with the world!</p>
 
 <p>Technologies: node.js, pug</p>
