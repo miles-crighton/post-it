@@ -47,15 +47,28 @@ function fillList(data) {
     for (let item in data.data) {
         console.log(data.data[item])
         let node = document.createElement('DIV')
-        node.className = 'message'
+        node.className = 'post-it'
 
-        let left = data.data[item].posX + 'px;';
-        let top = data.data[item].posY + 'px; ';
-        let style = 'margin-top: ' + top + 'margin-left: ' + left
-        node.setAttribute('style', style)
+        node = adjustPosition(node, data.data[item])
+
+        let message = document.createElement('DIV');
+        message.appendChild(document.createTextNode(data.data[item]['text'].toString()));
+        message.className = 'message'
+        node.appendChild(message)
         
-        let textNode = document.createTextNode(data.data[item]['text'].toString() + ' - ' + data.data[item]['author'].toString())
-        node.appendChild(textNode)
+        let author = document.createElement('DIV');
+        author.appendChild(document.createTextNode(' - ' + data.data[item]['author'].toString()))
+        author.className = 'author'
+        node.appendChild(author)
+
         list.append(node)
     }
+}
+
+adjustPosition = (node, data) => {
+    let left = data.posX + 'px;';
+    let top = data.posY + 'px; ';
+    let style = 'margin-top: ' + top + 'margin-left: ' + left
+    node.setAttribute('style', style)
+    return node
 }
