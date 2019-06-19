@@ -1,28 +1,26 @@
-function sendMessage() {
-    let messageText = document.getElementById('messageText').value
+function sendMessage(messageText, messageX, messageY) {
+    //let messageText = document.getElementById('messageText').value
     let messageAuthor = document.getElementById('messageAuthor').value
-    let messageX = document.getElementById('messageX').value
-    let messageY = document.getElementById('messageY').value
+    //let messageX = document.getElementById('messageX').value
+    //let messageY = document.getElementById('messageY').value
 
-    postMessage(messageText, messageAuthor, messageX, messageY)
+    postMessage(messageText, messageX, messageY)
         .then(response => fillList(response))
         .catch(err => console.error(err))
 }
 
-async function postMessage(text, author, posX, posY) {
-    let messageJSON = JSON.stringify({
+async function postMessage(text, posX, posY) {
+    const messageJSON = JSON.stringify({
         text,
-        author,
         posX,
         posY,
     })
-    console.log(messageJSON)
-    let response = await fetch("http://127.0.0.1:3000/add", {
+    const response = await fetch("http://127.0.0.1:3000/add", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: messageJSON
     })
-    let jsonResponse = response.json()
+    const jsonResponse = response.json()
     return jsonResponse
 }
 
@@ -39,13 +37,11 @@ function updateData() {
 }
 
 function fillList(data) {
-    console.log('data', data)
     var list = document.getElementById('messageBoard')
     while (list.firstChild) {
         list.removeChild(list.firstChild);
     }
     for (let item in data.data) {
-        console.log(data.data[item])
         let node = document.createElement('DIV')
         node.className = 'post-it'
 
@@ -56,10 +52,10 @@ function fillList(data) {
         message.className = 'message'
         node.appendChild(message)
         
-        let author = document.createElement('DIV');
-        author.appendChild(document.createTextNode(' - ' + data.data[item]['author'].toString()))
-        author.className = 'author'
-        node.appendChild(author)
+        // let author = document.createElement('DIV');
+        // author.appendChild(document.createTextNode(' - ' + data.data[item]['author'].toString()))
+        // author.className = 'author'
+        // node.appendChild(author)
 
         list.append(node)
     }
