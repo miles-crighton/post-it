@@ -1,6 +1,6 @@
 function sendMessage(messageText, messageX, messageY) {
     //let messageText = document.getElementById('messageText').value
-    let messageAuthor = document.getElementById('messageAuthor').value
+    //let messageAuthor = document.getElementById('messageAuthor').value
     //let messageX = document.getElementById('messageX').value
     //let messageY = document.getElementById('messageY').value
 

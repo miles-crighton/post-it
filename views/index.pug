@@ -6,21 +6,21 @@ block content
   script(src='/javascripts/index.js')
   script(src="https://cdn.jsdelivr.net/npm/interactjs/dist/interact.min.js")
   script(src='/javascripts/dragAndDrop.js')
-  text message:
-  input(type="text" id="messageText")
-  text author:
-  input(type='text', id='messageAuthor', placeholder='Anonymous')
-  text X:
-  input(type='number', id='messageX')
-  text Y:
-  input(type='number' id='messageY')
-  button(onclick='sendMessage()') Post!
+  //- text message:
+  //- input(type="text" id="messageText")
+  //- text author:
+  //- input(type='text', id='messageAuthor', placeholder='Anonymous')
+  //- text X:
+  //- input(type='number', id='messageX')
+  //- text Y:
+  //- input(type='number' id='messageY')
+  //- button(onclick='sendMessage()') Post!
   div(id='mainContainer')
-    div(id='messageBoard' class='dropzone')
+    div(class='post-it' id='staticPostIt')
     div(class='drag-drop')
       textarea(type='text' id='draggedArea' class='message')
-      div(class='accent-shape')
-      div(class='drag-handle')
+    div(id='messageBoard' class='dropzone')
+
 
 
 
