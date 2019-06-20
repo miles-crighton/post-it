@@ -1,16 +1,21 @@
-<h1>post-it</h1>
-<p>An application that allows you to share post-it messages with the world!</p>
+# post-it
+An application that allows you to share post-it messages with the world!
 
-<p>Technologies: node.js, pug</p>
+Technologies: node.js, pug>
 
-<h3>To run locally</h3>
-<p>Clone the repository onto your local machine.</p>
-    <pre><code>git clone https://github.com/miles-crighton/post-it.git</code></pre>
+## To run locally
+Clone the repository onto your local machine.
+    git clone https://github.com/miles-crighton/post-it.git
 
-<p>Download the required npm modules:</p>
-    <pre><code>npm install</code></pre>
+Download the required npm modules:
+    npm install
 
-<p>Start a local node.js server:</p>
-    <pre></code>npm start</code></pre>
+Start a local node.js server:
+    npm start
 
-<p>You can then connect through a browser via local host on port 3000 (0.0.0.0:3000)</p>
+You can then connect through a browser via local host on port 3000 (0.0.0.0:3000)
+
+# Todo
+
+- [] Indicate connection error to user
+- [] 
