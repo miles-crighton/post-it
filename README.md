@@ -5,7 +5,9 @@ Technologies: node.js, pug
 
 ## To run locally
 Clone the repository onto your local machine.
-    git clone https://github.com/miles-crighton/post-it.git
+```bash
+git clone https://github.com/miles-crighton/post-it.git
+```
 
 Download the required npm modules:
     npm install
