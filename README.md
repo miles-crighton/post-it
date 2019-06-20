@@ -23,5 +23,7 @@ You can then connect through a browser via local host on port 3000 (0.0.0.0:3000
 
 # Todo
 
+- [ ] 
 - [ ] Indicate connection error to user
-- [ ] To be added
+- [ ] Server-side profanity filter option
+- [ ] Add color options for post-its

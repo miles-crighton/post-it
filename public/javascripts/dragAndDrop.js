@@ -16,14 +16,14 @@ interact('.dropzone').dropzone({
     },
     ondrop: function (event) {
         //Test
-        interact(event.relatedTarget).draggable({intertia: true})
+        //interact(event.relatedTarget).draggable({intertia: true})
     },
     ondropdeactivate: function (event) {
         // remove active dropzone feedback
     }
 });
 
-const position = { x: 0, y: 0 }
+var position = { x: 0, y: 0 }
 
 
 interact('.drag-drop')
@@ -33,30 +33,37 @@ interact('.drag-drop')
         ignoreFrom: '.postItMessage',
         modifiers: [
             interact.modifiers.restrict({
-                restriction: "parent",
                 endOnly: true,
                 elementRect: { top: 0, left: 0, bottom: 0, right: 0 }
             })
         ],
         autoScroll: true,
         onstart: function(event) {
-            console.log(event.type, event.target)
-            event.target.classList.add('snap-enabled')
+            var target = event.target;
             var el = document.getElementById('draggedArea');
+
+            // Bring element in front of its siblings
+            //target.parentNode.appendChild(target);
+            
+            event.target.classList.add('snap-enabled')
+ 
             el.style.border = "none";
+            target.style.boxShadow = '0 2px 6px 0 rgba(0, 0, 0, 0.2), 0 5px 10px 0 rgba(0, 0, 0, 0.08)';
         },
         onmove: function(event) {
             position.x += event.dx
             position.y += event.dy
+
 
             event.target.style.transform =
                 `translate(${position.x}px, ${position.y}px)`
             event.target.style.cursor = 'default'
         },
         onend: function(event) {
+            var target = event.target;
             var el = document.getElementById('draggedArea');
-            if (!eleHasClass(event.target, 'snap-enabled')) {
-                sendMessage(el.value, position.x, (position.y - 100))
+            if (!eleHasClass(target, 'snap-enabled')) {
+                sendMessage(el.value, position.x - 140, position.y + 10 )
             }
             position.x = 0;
             position.y = 0;
@@ -66,6 +73,7 @@ interact('.drag-drop')
 
             el.value = '';
             el.style.border = '1px solid rgb(230, 108, 108)';
+            target.style.boxShadow = 'none';
         }
     });
 

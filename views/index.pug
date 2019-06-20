@@ -16,10 +16,12 @@ block content
   //- input(type='number' id='messageY')
   //- button(onclick='sendMessage()') Post!
   div(id='mainContainer')
-    div(class='post-it' id='staticPostIt')
-    div(class='drag-drop')
-      textarea(type='text' id='draggedArea' class='message')
+
     div(id='messageBoard' class='dropzone')
+    div(id='optionSidebar')
+      div(class='post-it' id='staticPostIt')
+      div(class='drag-drop')
+        textarea(type='text' id='draggedArea' class='message')
 
 
 
