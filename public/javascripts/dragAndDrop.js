@@ -1,6 +1,5 @@
 interact('.dropzone').dropzone({
     overlap: 1,
-
     ondropactivate: function (event) {
         // add active dropzone feedback
     },
@@ -41,9 +40,6 @@ interact('.drag-drop')
         onstart: function(event) {
             var target = event.target;
             var el = document.getElementById('draggedArea');
-
-            // Bring element in front of its siblings
-            //target.parentNode.appendChild(target);
             
             event.target.classList.add('snap-enabled')
  
@@ -53,7 +49,6 @@ interact('.drag-drop')
         onmove: function(event) {
             position.x += event.dx
             position.y += event.dy
-
 
             event.target.style.transform =
                 `translate(${position.x}px, ${position.y}px)`

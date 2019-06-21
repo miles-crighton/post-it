@@ -15,8 +15,7 @@ input {
   position: relative;
   width: 950px;
   height: 550px;
-  background-color: red;
-  border: 1px solid black;
+  border: 2px solid grey;
 }
 
 #optionSidebar {
@@ -25,7 +24,8 @@ input {
   height: 100%;
   left: 0;
   top: 0;
-  background-color: white;
+  background-color: sandybrown;
+  background-image: url(https://previews.123rf.com/images/nomadsoul1/nomadsoul11303/nomadsoul1130302558/18433100-close-up-of-cork-board-background-or-texture.jpg)
 }
 
 #messageBoard {
@@ -36,12 +36,6 @@ input {
   height: 100%;
   background-color: chocolate;
   overflow: hidden;
-}
-
-#staticPostIt {
-  position: absolute;
-  top: 20px;
-  left: 15px;
 }
 
 .post-it {
@@ -80,8 +74,8 @@ input {
 }
 
 .message {
-    position: relative;
-    box-shadow: none;
+  position: relative;
+  box-shadow: none;
   background: none;
   outline: none;
   font-size: 10px;
@@ -94,26 +88,7 @@ input {
   overflow: hidden;
 }
 
-.author {
-  position: absolute;
-  left: 10px;
-  bottom: 10px;
-}
-
-#draggedArea {
-  border: 1px solid rgb(230, 108, 108);
-}
-
-
-
 .drag-drop {
-
-  width: 100px;
-  height: 100px;
-  background: rgb(249, 134, 121);
-  overflow: hidden;
-  border-bottom-right-radius: 10px;
-  margin: 10px;
   box-shadow: none;
 
   touch-action: none;
@@ -121,29 +96,5 @@ input {
           transform: translate(0px, 0px);
 
   transition: background-color 0.3s;
-}
-
-.drag-drop::before {
-  content: '';
-  position: absolute;
-  transform: rotate(45deg);
-  border-top-left-radius: 7px;
-  right: -10px;
-  bottom: -20px;
-  width: 30px;
-  height: 25px;
-  background-color: rgb(205, 93, 81);
-}
-
-.drag-drop::after {
-  content: '';
-  position: absolute;
-  border-bottom-right-radius: 25px;
-  right: 8px;
-  bottom: -1px;
-  width: 10px;
-  height: 10px;
-  background-color: red;
-  background: rgb(249, 134, 121);
 }
 

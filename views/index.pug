@@ -3,29 +3,17 @@ extends layout
 block content
   h1= title
   p Write a message and post it on the board.
-  script(src='/javascripts/index.js')
   script(src="https://cdn.jsdelivr.net/npm/interactjs/dist/interact.min.js")
+  script(src='/javascripts/domFuncs.js')
   script(src='/javascripts/dragAndDrop.js')
-  //- text message:
-  //- input(type="text" id="messageText")
-  //- text author:
-  //- input(type='text', id='messageAuthor', placeholder='Anonymous')
-  //- text X:
-  //- input(type='number', id='messageX')
-  //- text Y:
-  //- input(type='number' id='messageY')
-  //- button(onclick='sendMessage()') Post!
-  div(id='mainContainer')
+  script(src='/javascripts/serverCom.js')
 
+  div(id='mainContainer')
     div(id='messageBoard' class='dropzone')
     div(id='optionSidebar')
-      div(class='post-it' id='staticPostIt')
-      div(class='drag-drop')
-        textarea(type='text' id='draggedArea' class='message')
-
-
-
-
+      div(class='post-it')
+      div(class='post-it drag-drop')
+        textarea(type='text' id='draggedArea' class='message' placeHolder='Write something nice?')
 
   script.
     updateData()
