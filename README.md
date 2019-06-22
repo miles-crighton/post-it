@@ -3,7 +3,7 @@ An application that allows you to share post-it messages with the world!
 
 This was an experiment to test out node as well as what it's like to perform front-end changes using plain js.
 
-##Tools
+## Tools
 Server side: Node.js
 Web framework: Express
 HTML Templating: Pug
@@ -29,6 +29,7 @@ You can then connect through a browser via local host on port 3000 (0.0.0.0:3000
 
 # Todo
 
+- [ ] Add client message data polling
 - [ ] Indicate connection error to user
 - [ ] Server-side profanity filter option
 - [ ] Add color options for post-its
