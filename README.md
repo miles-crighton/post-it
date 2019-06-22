@@ -4,10 +4,10 @@ An application that allows you to share post-it messages with the world!
 This was an experiment to test out node as well as what it's like to perform front-end changes using plain js.
 
 ## Tools
-Server side: Node.js
-Web framework: Express
-HTML Templating: Pug
-Front-end: Vanilla CSS & JS
+- Server side: Node.js
+- Web framework: Express
+- HTML Templating: Pug
+- Front-end: Vanilla CSS & JS
 
 ## To run locally
 Clone the repository onto your local machine.
