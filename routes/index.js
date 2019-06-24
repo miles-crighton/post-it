@@ -26,7 +26,4 @@ router.get('/data', function(req, res, next) {
   res.end(JSON.stringify(response));
 });
 
-function generateMessage(message) {
-}
-
 module.exports = router;

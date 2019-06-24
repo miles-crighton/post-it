@@ -10,7 +10,7 @@ sendMessage = (messageText, messageX, messageY) => {
     }
 }
 
-updateData = () => {
+updateClientData = () => {
     requestData()
         .then(res => replacePostIts(res))
         .catch(err => console.log(err))
