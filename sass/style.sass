@@ -1,3 +1,6 @@
+$board-width: 400px
+$sidebar-width: 150px
+  
 body
   padding: 50px
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif
@@ -12,14 +15,14 @@ input
 
 #mainContainer 
   position: relative
-  width: 950px
+  width: $board-width + $sidebar-width
   height: 550px
   border: 2px solid grey
 
 
 #optionSidebar 
   position: absolute
-  width: 150px
+  width: $sidebar-width
   height: 100%
   left: 0
   top: 0
@@ -30,7 +33,7 @@ input
   position: absolute
   right: 0
   top: 0
-  width: 800px
+  width: $board-width
   height: 100%
   background-color: chocolate
   overflow: hidden

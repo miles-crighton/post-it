@@ -32,7 +32,9 @@ interact('.drag-drop')
             var textArea = document.getElementById('draggedMessage');
             if (eleHasClass(target, 'drop-enabled')) {
                 //TODO: Gather position programatically.
-                sendMessage(textArea.value, position.x - 110, position.y + 10 )
+                let width = target.parentElement.clientWidth
+                //sidebar-width + 10px margin
+                sendMessage(textArea.value, position.x - width + 10, position.y + 10 )
                 target.classList.remove('drop-enabled')
             }
             position.x = 0;
