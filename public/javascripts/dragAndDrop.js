@@ -1,4 +1,4 @@
-const position = { x: 0, y: 0 }
+var position = { x: 0, y: 0 }
 
 interact('.drag-drop')
     .draggable({
@@ -14,11 +14,9 @@ interact('.drag-drop')
         autoScroll: true,
         onstart: function(event) {
             var target = event.target;
-            var el = document.getElementById('draggedArea');
+            var textArea = document.getElementById('draggedMessage');
             
-            event.target.classList.add('snap-enabled')
- 
-            el.style.border = "none";
+            textArea.style.border = "none";
             target.style.boxShadow = '0 2px 6px 0 rgba(0, 0, 0, 0.2), 0 5px 10px 0 rgba(0, 0, 0, 0.08)';
         },
         onmove: function(event) {
@@ -31,9 +29,10 @@ interact('.drag-drop')
         },
         onend: function(event) {
             var target = event.target;
-            var el = document.getElementById('draggedArea');
-            if (!eleHasClass(target, 'snap-enabled')) {
-                sendMessage(el.value, position.x - 140, position.y + 10 )
+            var textArea = document.getElementById('draggedMessage');
+            if (eleHasClass(target, 'drop-enabled')) {
+                sendMessage(textArea.value, position.x - 140, position.y + 10 )
+                target.classList.remove('drop-enabled')
             }
             position.x = 0;
             position.y = 0;
@@ -41,34 +40,22 @@ interact('.drag-drop')
             event.target.style.transform =
                 `translate(${position.x}px, ${position.y}px)`;
 
-            el.value = '';
-            el.style.border = '1px solid rgb(230, 108, 108)';
+            textArea.value = '';
+            textArea.style.border = '1px dashed rgb(230, 108, 108)';
             target.style.boxShadow = 'none';
         }
     });
 
 interact('.dropzone').dropzone({
     overlap: 1,
-    ondropactivate: function (event) {
-        // add active dropzone feedback
-    },
     ondragenter: function (event) {
         var draggableElement = event.relatedTarget;
-        var dropzoneElement = event.target;
-        // feedback the possibility of a drop
-        draggableElement.classList.remove('snap-enabled')
+
+        draggableElement.classList.add('drop-enabled')
     },
     ondragleave: function (event) {
-        // remove the drop feedback style
-        event.relatedTarget.classList.add('snap-enabled')
+        event.relatedTarget.classList.remove('drop-enabled')
     },
-    ondrop: function (event) {
-        //Test
-        //interact(event.relatedTarget).draggable({intertia: true})
-    },
-    ondropdeactivate: function (event) {
-        // remove active dropzone feedback
-    }
 });
 
 function eleHasClass(el, cls) {

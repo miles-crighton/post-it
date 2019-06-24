@@ -1,9 +1,13 @@
 const HOST_URL = window.location.protocol + '//' + window.location.host;
 
 sendMessage = (messageText, messageX, messageY) => {
-    postMessage(messageText, messageX, messageY)
-        .then(res => replacePostIts(res))
-        .catch(err => console.error(err))
+    if (messageText === '' || messageX < 0 || messageY < 0) {
+        console.log('Unable to post message - make sure message field is not empty.')
+    } else {
+        postMessage(messageText, messageX, messageY)
+            .then(res => replacePostIts(res))
+            .catch(err => console.error(err))
+    }
 }
 
 updateData = () => {

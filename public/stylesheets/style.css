@@ -87,6 +87,10 @@ input {
   overflow: hidden;
 }
 
+#draggedMessage {
+  border: 1px dashed rgb(230, 108, 108);
+}
+
 .drag-drop {
   box-shadow: none;
 
