@@ -1,4 +1,4 @@
-var position = { x: 0, y: 0 }
+const position = { x: 0, y: 0 }
 
 interact('.drag-drop')
     .draggable({
@@ -31,7 +31,8 @@ interact('.drag-drop')
             var target = event.target;
             var textArea = document.getElementById('draggedMessage');
             if (eleHasClass(target, 'drop-enabled')) {
-                sendMessage(textArea.value, position.x - 140, position.y + 10 )
+                //TODO: Gather position programatically.
+                sendMessage(textArea.value, position.x - 110, position.y + 10 )
                 target.classList.remove('drop-enabled')
             }
             position.x = 0;
@@ -50,7 +51,6 @@ interact('.dropzone').dropzone({
     overlap: 1,
     ondragenter: function (event) {
         var draggableElement = event.relatedTarget;
-
         draggableElement.classList.add('drop-enabled')
     },
     ondragleave: function (event) {
