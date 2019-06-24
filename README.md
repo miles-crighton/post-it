@@ -1,13 +1,14 @@
 # post-it
 An application that allows you to share post-it messages with the world!
 
-This was an experiment to test out node as well as what it's like to perform front-end changes using plain js.
+This was an experiment to test out node as well as what it's like to perform front-end changes using web apis.
 
 ## Tools
 - Server side: Node.js
 - Web framework: Express
 - HTML Templating: Pug
 - Front-end: Vanilla CSS & JS
+- Additional Libs: interact.js
 
 ## To run locally
 Clone the repository onto your local machine.
@@ -29,7 +30,10 @@ You can then connect through a browser via local host on port 3000 (0.0.0.0:3000
 
 # Todo
 
+- [ ] Add json file store
+- [ ] Update styling
 - [ ] Add client message data polling
 - [ ] Indicate connection error to user
 - [ ] Server-side profanity filter option
 - [ ] Add color options for post-its
+- [ ] Add Screenshot to Readme

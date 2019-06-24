@@ -1,12 +1,12 @@
 function sendMessage(messageText, messageX, messageY) {
     postMessage(messageText, messageX, messageY)
-        .then(response => replacePostIts(response))
+        .then(res => replacePostIts(res))
         .catch(err => console.error(err))
 }
 
 function updateData() {
     requestData()
-        .then(data => replacePostIts(data))
+        .then(res => replacePostIts(res))
         .catch(err => console.log(err))
 }
 

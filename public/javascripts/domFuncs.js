@@ -1,28 +1,44 @@
 function replacePostIts(data) {
-    var messageBoard = document.getElementById('messageBoard')
+    let messageBoard = document.getElementById('messageBoard')
 
     while (messageBoard.firstChild) {
         messageBoard.removeChild(messageBoard.firstChild);
     }
     for (let item in data.data) {
-        let node = document.createElement('DIV')
-        node.className = 'post-it'
-
-        node = adjustPosition(node, data.data[item])
-
-        let message = document.createElement('DIV');
-        message.appendChild(document.createTextNode(data.data[item]['text'].toString()));
-        message.className = 'message'
-        node.appendChild(message)
-
-        messageBoard.append(node)
+        let postIt = createPostIt(data.data[item])
+        messageBoard.append(postIt)
     }
 }
 
-adjustPosition = (node, data) => {
-    const left = data.posX + 'px;';
-    const top = data.posY + 'px;';
-    const style = 'margin-top: ' + top + ' ' + 'margin-left: ' + left
+createPostIt = (data) => {
+    let postIt = createDiv('post-it');
+    let { posX, posY, text } = data
+
+    postIt = adjustPosition(postIt, posX, posY)
+    let messageNode = createDiv('message', text);
+    postIt.appendChild(messageNode)
+
+    return postIt
+}
+
+createDiv = (className = undefined, text = undefined) => {
+    const divNode = document.createElement('DIV');
+    if (typeof text !== 'undefined') {
+        const textNode = document.createTextNode(text);
+        divNode.appendChild(textNode);
+    }
+    if (typeof className !== 'undefined') {
+        divNode.className = className;
+    }
+    return divNode
+}
+
+adjustPosition = (node, posX, posY) => {
+    const style = 'margin-top: ' + addPx(posY) + ' ' + 'margin-left: ' + addPx(posX)
     node.setAttribute('style', style)
     return node
+}
+
+addPx = (val) => {
+    return val + 'px;'
 }
