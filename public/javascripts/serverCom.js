@@ -6,14 +6,14 @@ sendMessage = (messageText, messageX, messageY) => {
     } else {
         postMessage(messageText, messageX, messageY)
             .then(res => replacePostIts(res))
-            .catch(err => console.error(err))
+            .catch(err => {console.error(err); alert('Could not reach server')})
     }
 }
 
 updateClientData = () => {
     requestData()
         .then(res => replacePostIts(res))
-        .catch(err => console.log(err))
+        .catch(err => { console.error(err); alert('Could not reach server') })
 }
 
 postMessage = async (text, posX, posY) => {
