@@ -1,21 +1,21 @@
-function replacePostIts(data) {
-    let messageBoard = document.getElementById('messageBoard')
+replacePostIts = (data) => {
+    const messageBoard = document.getElementById('messageBoard')
 
     while (messageBoard.firstChild) {
         messageBoard.removeChild(messageBoard.firstChild);
     }
     for (let item in data.data) {
-        let postIt = createPostIt(data.data[item])
+        const postIt = createPostIt(data.data[item])
         messageBoard.append(postIt)
     }
 }
 
 createPostIt = (data) => {
-    let postIt = createDiv('post-it');
-    let { posX, posY, text } = data
+    const { posX, posY, text } = data
+    const messageNode = createDiv('message', text);
+    const postIt = createDiv('post-it');
 
-    postIt = adjustPosition(postIt, posX, posY)
-    let messageNode = createDiv('message', text);
+    adjustPosition(postIt, posX, posY)
     postIt.appendChild(messageNode)
 
     return postIt
@@ -36,7 +36,6 @@ createDiv = (className = undefined, text = undefined) => {
 adjustPosition = (node, posX, posY) => {
     const style = 'margin-top: ' + addPx(posY) + ' ' + 'margin-left: ' + addPx(posX)
     node.setAttribute('style', style)
-    return node
 }
 
 addPx = (val) => {

@@ -1,22 +1,24 @@
-function sendMessage(messageText, messageX, messageY) {
+const HOST_URL = window.location.protocol + '//' + window.location.host;
+
+sendMessage = (messageText, messageX, messageY) => {
     postMessage(messageText, messageX, messageY)
         .then(res => replacePostIts(res))
         .catch(err => console.error(err))
 }
 
-function updateData() {
+updateData = () => {
     requestData()
         .then(res => replacePostIts(res))
         .catch(err => console.log(err))
 }
 
-async function postMessage(text, posX, posY) {
+postMessage = async (text, posX, posY) => {
     const messageJSON = JSON.stringify({
         text,
         posX,
         posY,
     })
-    const response = await fetch("http://127.0.0.1:3000/add", {
+    const response = await fetch(HOST_URL + "/add", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: messageJSON
@@ -25,8 +27,8 @@ async function postMessage(text, posX, posY) {
     return jsonResponse
 }
 
-async function requestData() {
-    const response = await fetch("http://127.0.0.1:3000/data")
+requestData = async () => {
+    const response = await fetch(HOST_URL + "/data")
     const jsonResponse = response.json()
     return jsonResponse
 }
