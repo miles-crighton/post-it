@@ -1,0 +1,102 @@
+body
+  padding: 50px
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif
+
+a 
+  color: #00B7FF
+
+
+input 
+  display: block
+
+
+#mainContainer 
+  position: relative
+  width: 950px
+  height: 550px
+  border: 2px solid grey
+
+
+#optionSidebar 
+  position: absolute
+  width: 150px
+  height: 100%
+  left: 0
+  top: 0
+  background-color: sandybrown
+
+
+#messageBoard 
+  position: absolute
+  right: 0
+  top: 0
+  width: 800px
+  height: 100%
+  background-color: chocolate
+  overflow: hidden
+
+
+.post-it 
+  position: absolute
+  width: 100px
+  height: 100px
+  background: rgb(249, 134, 121)
+  overflow: hidden
+  border-bottom-right-radius: 10px
+  margin: 10px
+  box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.2), 0 5px 10px 0 rgba(0, 0, 0, 0.08)
+
+
+.post-it::before 
+  content: ''
+  position: absolute
+  transform: rotate(45deg)
+  border-top-left-radius: 7px
+  right: -10px
+  bottom: -20px
+  width: 30px
+  height: 25px
+  background-color: rgb(205, 93, 81)
+
+
+.post-it::after 
+  content: ''
+  position: absolute
+  border-bottom-right-radius: 25px
+  right: 8px
+  bottom: -1px
+  width: 10px
+  height: 10px
+  background-color: red
+  background: rgb(249, 134, 121)
+
+
+.message 
+  position: relative
+  box-shadow: none
+  background: none
+  outline: none
+  font-size: 10px
+  border: none
+  resize: none
+  margin: 10%
+  width: 75%
+  text-emphasis: wrap
+  height: 60%
+  overflow: hidden
+
+
+#draggedMessage 
+  border: 1px dashed rgb(230, 108, 108)
+
+
+.drag-drop 
+  box-shadow: none
+
+  touch-action: none
+  -webkit-transform: translate(0px, 0px)
+          transform: translate(0px, 0px)
+
+  transition: background-color 0.3s
+
+

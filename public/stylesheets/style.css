@@ -1,22 +1,18 @@
 body {
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-}
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; }
 
 a {
-  color: #00B7FF;
-}
+  color: #00B7FF; }
 
 input {
-  display: block;
-}
+  display: block; }
 
 #mainContainer {
   position: relative;
   width: 950px;
   height: 550px;
-  border: 2px solid grey;
-}
+  border: 2px solid grey; }
 
 #optionSidebar {
   position: absolute;
@@ -24,8 +20,7 @@ input {
   height: 100%;
   left: 0;
   top: 0;
-  background-color: sandybrown;
-}
+  background-color: sandybrown; }
 
 #messageBoard {
   position: absolute;
@@ -34,19 +29,17 @@ input {
   width: 800px;
   height: 100%;
   background-color: chocolate;
-  overflow: hidden;
-}
+  overflow: hidden; }
 
 .post-it {
   position: absolute;
   width: 100px;
   height: 100px;
-  background: rgb(249, 134, 121);
+  background: #f98679;
   overflow: hidden;
   border-bottom-right-radius: 10px;
   margin: 10px;
-  box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.2), 0 5px 10px 0 rgba(0, 0, 0, 0.08);
-}
+  box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.2), 0 5px 10px 0 rgba(0, 0, 0, 0.08); }
 
 .post-it::before {
   content: '';
@@ -57,8 +50,7 @@ input {
   bottom: -20px;
   width: 30px;
   height: 25px;
-  background-color: rgb(205, 93, 81);
-}
+  background-color: #cd5d51; }
 
 .post-it::after {
   content: '';
@@ -69,8 +61,7 @@ input {
   width: 10px;
   height: 10px;
   background-color: red;
-  background: rgb(249, 134, 121);
-}
+  background: #f98679; }
 
 .message {
   position: relative;
@@ -84,20 +75,14 @@ input {
   width: 75%;
   text-emphasis: wrap;
   height: 60%;
-  overflow: hidden;
-}
+  overflow: hidden; }
 
 #draggedMessage {
-  border: 1px dashed rgb(230, 108, 108);
-}
+  border: 1px dashed #e66c6c; }
 
 .drag-drop {
   box-shadow: none;
-
   touch-action: none;
   -webkit-transform: translate(0px, 0px);
-          transform: translate(0px, 0px);
-
-  transition: background-color 0.3s;
-}
-
+    -webkit-transform-transform: translate(0px, 0px);
+  transition: background-color 0.3s; }
