@@ -1,29 +1,4 @@
-interact('.dropzone').dropzone({
-    overlap: 1,
-    ondropactivate: function (event) {
-        // add active dropzone feedback
-    },
-    ondragenter: function (event) {
-        var draggableElement = event.relatedTarget;
-        var dropzoneElement = event.target;
-        // feedback the possibility of a drop
-        draggableElement.classList.remove('snap-enabled')
-    },
-    ondragleave: function (event) {
-        // remove the drop feedback style
-        event.relatedTarget.classList.add('snap-enabled')
-    },
-    ondrop: function (event) {
-        //Test
-        //interact(event.relatedTarget).draggable({intertia: true})
-    },
-    ondropdeactivate: function (event) {
-        // remove active dropzone feedback
-    }
-});
-
-var position = { x: 0, y: 0 }
-
+const position = { x: 0, y: 0 }
 
 interact('.drag-drop')
     .draggable({
@@ -71,6 +46,30 @@ interact('.drag-drop')
             target.style.boxShadow = 'none';
         }
     });
+
+interact('.dropzone').dropzone({
+    overlap: 1,
+    ondropactivate: function (event) {
+        // add active dropzone feedback
+    },
+    ondragenter: function (event) {
+        var draggableElement = event.relatedTarget;
+        var dropzoneElement = event.target;
+        // feedback the possibility of a drop
+        draggableElement.classList.remove('snap-enabled')
+    },
+    ondragleave: function (event) {
+        // remove the drop feedback style
+        event.relatedTarget.classList.add('snap-enabled')
+    },
+    ondrop: function (event) {
+        //Test
+        //interact(event.relatedTarget).draggable({intertia: true})
+    },
+    ondropdeactivate: function (event) {
+        // remove active dropzone feedback
+    }
+});
 
 function eleHasClass(el, cls) {
     return el.className && new RegExp("(\\s|^)" + cls + "(\\s|$)").test(el.className);
