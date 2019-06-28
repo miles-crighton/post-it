@@ -11,11 +11,11 @@ replacePostIts = (data) => {
 }
 
 createPostIt = (data) => {
-    const { posX, posY, text } = data
+    const { posX, posY, text, color } = data
     const messageNode = createDiv('message', text);
     const postIt = createDiv('post-it');
 
-    adjustPosition(postIt, posX, posY)
+    addStyle(postIt, posX, posY, color)
     postIt.appendChild(messageNode)
 
     return postIt
@@ -33,8 +33,8 @@ createDiv = (className = undefined, text = undefined) => {
     return divNode
 }
 
-adjustPosition = (node, posX, posY) => {
-    const style = 'margin-top: ' + addPx(posY) + ' ' + 'margin-left: ' + addPx(posX)
+addStyle = (node, posX, posY, color) => {
+    const style = 'margin-top: ' + addPx(posY) + ' ' + 'margin-left: ' + addPx(posX) + 'background-color: ' + color + ';'
     node.setAttribute('style', style)
 }
 
