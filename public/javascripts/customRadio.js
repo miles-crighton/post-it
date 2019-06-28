@@ -10,35 +10,36 @@ export default class CustomRadio {
 
     init(container) {
         this.container = container;
-        this.titleValue = this.container.dataset.title;
+        this.container.classList.add('color-selector')
         this.render();
     }
 
     render() {
         this.container.innerHTML = CustomRadio.markup(this);
         this.ColorButtons = this.container.getElementsByClassName('color-button');
+
+        //Set first element as selected
+        this.ColorButtons[0].setAttribute('id', 'color-selected');
+
+        //Set each button's color
+        for (let button of this.ColorButtons) {
+            button.style = `background-color: ${button.attributes[1].nodeValue}`;
+        }
+
         this.addEventListeners();
     }
 
     static markup({ colors }) {
-        let total = ``
+        let buttons = ``
         for (let color of colors) {
-            total += `<button class='color-button' color=${color}>Click Me</button>`
+            buttons += `<button class='color-button' color=${color}></button>`
         }
-        console.log(total)
-        return total
-        return `
-            <h1>${'Hello'}</h1>
-            <button class="click-me">Click Me</div>
-            <button class="click-me">Click Me</div>
-            <button class="click-me">Click Me</div>
-            `;
+        return buttons
     }
 
     addEventListeners() {
-        console.log(this.ColorButtons)
+        //Add custom events for each colored button
         for (let button of this.ColorButtons) {
-            console.log()
             button.addEventListener('click', () => {
                 let eventOptions = {
                     bubbles: true, 
@@ -48,6 +49,9 @@ export default class CustomRadio {
                 }
                 let colorChangeEvent = new CustomEvent('color-changed', eventOptions);
                 this.container.dispatchEvent(colorChangeEvent)
+                let prevSelectedButton = document.getElementById('color-selected')
+                prevSelectedButton.removeAttribute('id')
+                button.setAttribute('id', 'color-selected')
             });
         };
 
@@ -68,18 +72,17 @@ export default class CustomRadio {
     }
 }
 
-
-
 CustomRadio.refs = {};
 
 document.addEventListener('DOMContentLoaded', () => {
-    let colors = ['Red', 'Yellow', 'Green']
+    let colors = ['red', 'yellow', 'green']
     new CustomRadio(document.getElementById('custom-radio'), colors)
 });
 
 
 document.addEventListener('color-changed', e => {
-    console.log(`Color changed to ${e.detail.color}`)
+    let selectedColorButton = document.getElementById('color-selected')
+    console.log(selectedColorButton)
 })
 
 

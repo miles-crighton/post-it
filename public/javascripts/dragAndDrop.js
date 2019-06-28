@@ -1,5 +1,6 @@
 const BOX_SHADOW_VAL = '0 2px 6px 0 rgba(0, 0, 0, 0.2), 0 5px 10px 0 rgba(0, 0, 0, 0.08)'
 const position = { x: 0, y: 0 }
+let currentColor = 'pink';
 
 interact('.drag-drop')
     .draggable({
@@ -35,7 +36,7 @@ interact('.drag-drop')
                 //TODO: Gather position programatically.
                 let width = target.parentElement.clientWidth
                 //sidebar-width + 10px margin
-                sendMessage(textArea.value, position.x - width + 10, position.y + 10 )
+                sendMessage(textArea.value, position.x - width + 10, position.y + 10, currentColor)
                 target.classList.remove('drop-enabled')
             }
             position.x = 0;
@@ -64,3 +65,10 @@ interact('.dropzone').dropzone({
 function eleHasClass(el, cls) {
     return el.className && new RegExp("(\\s|^)" + cls + "(\\s|$)").test(el.className);
 }
+
+document.addEventListener('color-changed', e => {
+    let draggedPostIt = document.querySelector('.drag-drop');
+    draggedPostIt.style = `background-color: ${e.detail.color}`
+    console.log(`Post-it color changed to ${e.detail.color}`)
+    currentColor = e.detail.color;
+})
