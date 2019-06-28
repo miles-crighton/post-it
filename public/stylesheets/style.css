@@ -10,13 +10,13 @@ input {
 
 #mainContainer {
   position: relative;
-  width: 550px;
+  width: 520px;
   height: 550px;
   border: 2px solid grey; }
 
 #optionSidebar {
   position: absolute;
-  width: 150px;
+  width: 120px;
   height: 100%;
   left: 0;
   top: 0;
@@ -82,7 +82,26 @@ input {
 
 .drag-drop {
   box-shadow: none;
+  position: relative;
   touch-action: none;
   -webkit-transform: translate(0px, 0px);
     -webkit-transform-transform: translate(0px, 0px);
   transition: background-color 0.3s; }
+
+#color-selector {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  border: 1px solid black; }
+
+.color-selected {
+  border: 3px solid white; }
+
+.color-circle {
+  margin: 5px;
+  width: 20px;
+  height: 20px;
+  border-radius: 20px;
+  background-color: salmon; }

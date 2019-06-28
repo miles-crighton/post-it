@@ -1,5 +1,5 @@
 $board-width: 400px
-$sidebar-width: 150px
+$sidebar-width: 120px
   
 body
   padding: 50px
@@ -89,12 +89,13 @@ input
   overflow: hidden
 
 
-#draggedMessage 
+#draggedMessage
   border: 1px dashed rgb(230, 108, 108)
 
 
 .drag-drop 
   box-shadow: none
+  position: relative;
 
   touch-action: none
   -webkit-transform: translate(0px, 0px)
@@ -102,4 +103,21 @@ input
 
   transition: background-color 0.3s
 
+#color-selector
+  position: relative
+  display: flex
+  align-items: center
+  justify-content: center
+  width: 100%
+  border: 1px solid black
+
+.color-selected
+  border: 3px solid white
+
+.color-circle
+  margin: 5px
+  width: 20px
+  height: 20px
+  border-radius: 20px
+  background-color: salmon
 
