@@ -8,14 +8,17 @@ block content
   script(src='/javascripts/serverCom.js')
   h1.
     post-it
-
-  div(id='mainContainer')
-    div(id='messageBoard' class='dropzone')
-    div(id='optionSidebar')
-      div(class='post-it')
-      div(class='post-it drag-drop')
-        textarea(type='text' class='message' id='draggedMessage' placeHolder='Write something nice?')
-      div(id='custom-radio')
+  div(id='app')
+    div(id='mainContainer')
+      div(id='messageBoard' class='dropzone')
+      div(id='optionSidebar')
+        div(class='post-it')
+        div(class='post-it drag-drop')
+          textarea(type='text' class='message' id='draggedMessage' placeHolder='Write something nice?')
+        div(id='custom-radio')
+  footer
+    div.
+      made by Miles
   script.
     updateClientData()
 
