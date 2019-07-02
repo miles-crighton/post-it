@@ -1,23 +1,28 @@
-$board-width: 400px
+$board-width: 600px
 $sidebar-width: 120px
   
 body
-  padding: 50px
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif
+  margin: 0;
+  background: rgb(240,240,120);
 
 a 
   color: #00B7FF
-
-
+  
 input 
   display: block
 
+h1
+  font-family: 'Indie Flower', cursive;
+  font-size: 60px;
+  margin: 20px 0px 20px 20px;
 
 #mainContainer 
+  margin-left: 20px;
   position: relative
   width: $board-width + $sidebar-width
   height: 550px
-  border: 2px solid grey
+  box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.2), 0 5px 10px 0 rgba(0, 0, 0, 0.08)
 
 
 #optionSidebar 
@@ -48,6 +53,7 @@ input
   border-bottom-right-radius: 10px
   margin: 10px
   box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.2), 0 5px 10px 0 rgba(0, 0, 0, 0.08)
+
 
 
 .post-it::before 
@@ -87,6 +93,7 @@ input
   text-emphasis: wrap
   height: 60%
   overflow: hidden
+  user-select: none
 
 
 #draggedMessage
@@ -109,8 +116,6 @@ input
   align-items: center
   justify-content: center
   width: 100%
-  // background-color: yellow;
-  border: 1px solid black
 
 #color-selected
   border: 2px solid white

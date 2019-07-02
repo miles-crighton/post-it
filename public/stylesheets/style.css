@@ -1,6 +1,7 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; }
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  margin: 0;
+  background: #f0f078; }
 
 a {
   color: #00B7FF; }
@@ -8,11 +9,17 @@ a {
 input {
   display: block; }
 
+h1 {
+  font-family: 'Indie Flower', cursive;
+  font-size: 60px;
+  margin: 20px 0px 20px 20px; }
+
 #mainContainer {
+  margin-left: 20px;
   position: relative;
-  width: 520px;
+  width: 720px;
   height: 550px;
-  border: 2px solid grey; }
+  box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.2), 0 5px 10px 0 rgba(0, 0, 0, 0.08); }
 
 #optionSidebar {
   position: absolute;
@@ -26,7 +33,7 @@ input {
   position: absolute;
   right: 0;
   top: 0;
-  width: 400px;
+  width: 600px;
   height: 100%;
   background-color: chocolate;
   overflow: hidden; }
@@ -75,7 +82,8 @@ input {
   width: 75%;
   text-emphasis: wrap;
   height: 60%;
-  overflow: hidden; }
+  overflow: hidden;
+  user-select: none; }
 
 #draggedMessage {
   border: 1px dashed #e66c6c; }
@@ -93,8 +101,7 @@ input {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
-  border: 1px solid black; }
+  width: 100%; }
 
 #color-selected {
   border: 2px solid white;

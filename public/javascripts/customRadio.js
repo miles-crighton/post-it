@@ -1,13 +1,4 @@
 export default class CustomRadio {
-    // set colors(colors) {
-    //     this.colors = colors;
-    //     this.render();
-    // }
-
-    // get colors() {
-    //     return this.colors;
-    // }
-
     init(container) {
         this.container = container;
         this.container.classList.add('color-selector')
@@ -75,7 +66,7 @@ export default class CustomRadio {
 CustomRadio.refs = {};
 
 document.addEventListener('DOMContentLoaded', () => {
-    let colors = ['red', 'yellow', 'green']
+    let colors = ['salmon', 'yellow', 'green']
     new CustomRadio(document.getElementById('custom-radio'), colors)
 });
 

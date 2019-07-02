@@ -1,6 +1,6 @@
 const BOX_SHADOW_VAL = '0 2px 6px 0 rgba(0, 0, 0, 0.2), 0 5px 10px 0 rgba(0, 0, 0, 0.08)'
 const position = { x: 0, y: 0 }
-let currentColor = 'pink';
+let currentColor = 'salmon';
 
 interact('.drag-drop')
     .draggable({
