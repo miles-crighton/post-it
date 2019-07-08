@@ -14,7 +14,7 @@ var data = [
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Post-it!', data: data });
+  //res.render('index', { title: 'Post-it!', data: data });
 });
 
 router.post('/add', function (req, res, next) {

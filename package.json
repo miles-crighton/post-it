@@ -8,7 +8,8 @@
     "watch-code": "nodemon ./bin/www",
     "build-css": "node-sass -o ./public/stylesheets -w sass",
     "watch-css": "nodemon -e sass -x \"npm run build-css\"",
-    "start-parcel": "parcel ./src/client/views/index.pug"
+    "start-parcel": "parcel ./src/client/views/index.pug",
+    "dev": "concurrently --kill-others \"npm run start-parcel\" \"npm run start\""
   },
   "dependencies": {
     "babel-core": "^6.26.3",
@@ -26,6 +27,7 @@
     "node-sass": "^4.12.0",
     "nodemon": "^1.19.1",
     "parcel-bundler": "^1.12.3",
-    "pug": "^2.0.4"
+    "pug": "^2.0.4",
+    "concurrently": "^4.1.1"
   }
 }
