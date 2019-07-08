@@ -1,10 +1,6 @@
 var express = require('express');
 var router = express.Router();
 
-var webpack = require('webpack');
-var webpackMiddleware = require('webpack-dev-middleware');
-var webpackConfig = require('../../webpack.config.js');
-
 var Filter = require('bad-words'),
   filter = new Filter();
 
