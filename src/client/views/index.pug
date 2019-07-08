@@ -1,0 +1,20 @@
+extends layout
+
+block content
+  script(src="https://cdn.jsdelivr.net/npm/interactjs/dist/interact.min.js")
+  script(src='../scripts/index.js')
+  h1.
+    post-it
+  div(id='app')
+    div(id='mainContainer')
+      div(id='messageBoard' class='dropzone')
+      div(id='optionSidebar')
+        div(class='post-it')
+        div(class='post-it drag-drop')
+          textarea(type='text' class='message' id='draggedMessage' placeHolder='Write something nice?')
+        div(id='custom-radio')
+  footer
+    div.
+      made by Miles
+
+
