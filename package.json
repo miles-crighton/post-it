@@ -12,7 +12,6 @@
   },
   "dependencies": {
     "babel-core": "^6.26.3",
-    "babel-polyfill": "^6.26.0",
     "bad-words": "^3.0.2",
     "core-js": "^3.1.4",
     "debug": "~2.6.9",
