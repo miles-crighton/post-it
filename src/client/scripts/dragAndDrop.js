@@ -1,4 +1,4 @@
-//const interact = require('interact');
+require('interactjs');
 import { sendMessage } from './serverCom.js'
 
 const BOX_SHADOW_VAL = '0 2px 6px 0 rgba(0, 0, 0, 0.2), 0 5px 10px 0 rgba(0, 0, 0, 0.08)'
