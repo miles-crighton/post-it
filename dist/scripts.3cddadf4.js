@@ -21401,7 +21401,6 @@ var position = {
   x: 0,
   y: 0
 };
-var currentColor = 'salmon';
 interact('.drag-drop').draggable({
   //allowFrom: '.drag-handle',
   inertia: false,
@@ -21431,12 +21430,13 @@ interact('.drag-drop').draggable({
   onend: function onend(event) {
     var target = event.target;
     var textArea = document.getElementById('draggedMessage');
+    var currentColor = target.style.backgroundColor;
 
     if (eleHasClass(target, 'drop-enabled')) {
       //TODO: Gather position programatically.
       var width = target.parentElement.clientWidth; //sidebar-width + 10px margin
 
-      (0, _serverCom.sendMessage)(textArea.value, position.x - width + 10, position.y + 10, currentColor);
+      (0, _serverCom.sendMessage)(textArea.value, position.x - width + 10, position.y + 10, target.style.backgroundColor);
       target.classList.remove('drop-enabled');
     }
 
@@ -21480,14 +21480,15 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 _customRadio.default.refs = {};
 document.addEventListener('DOMContentLoaded', function () {
   var colors = ['salmon', 'yellow', 'green'];
+  var draggedPostIt = document.querySelector('.drag-drop');
   new _customRadio.default(document.getElementById('custom-radio'), colors);
   (0, _serverCom.updateClientData)();
+  draggedPostIt.style = "background-color: ".concat(colors[0]);
 });
 document.addEventListener('color-changed', function (e) {
   var draggedPostIt = document.querySelector('.drag-drop');
   draggedPostIt.style = "background-color: ".concat(e.detail.color);
   console.log("Post-it color changed to ".concat(e.detail.color));
-  currentColor = e.detail.color;
 });
 },{"core-js/stable":"../../../node_modules/core-js/stable/index.js","regenerator-runtime/runtime":"../../../node_modules/regenerator-runtime/runtime.js","./customRadio.js":"../scripts/customRadio.js","./dragAndDrop.js":"../scripts/dragAndDrop.js","./serverCom.js":"../scripts/serverCom.js"}],"../../../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
@@ -21517,7 +21518,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50601" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55580" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

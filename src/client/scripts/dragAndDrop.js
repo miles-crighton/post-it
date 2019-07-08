@@ -3,7 +3,6 @@ import { sendMessage } from './serverCom.js'
 
 const BOX_SHADOW_VAL = '0 2px 6px 0 rgba(0, 0, 0, 0.2), 0 5px 10px 0 rgba(0, 0, 0, 0.08)'
 const position = { x: 0, y: 0 }
-let currentColor = 'salmon';
 
 interact('.drag-drop')
     .draggable({
@@ -35,11 +34,12 @@ interact('.drag-drop')
         onend: function(event) {
             var target = event.target;
             var textArea = document.getElementById('draggedMessage');
+            var currentColor = target.style.backgroundColor;
             if (eleHasClass(target, 'drop-enabled')) {
                 //TODO: Gather position programatically.
                 let width = target.parentElement.clientWidth
                 //sidebar-width + 10px margin
-                sendMessage(textArea.value, position.x - width + 10, position.y + 10, currentColor)
+                sendMessage(textArea.value, position.x - width + 10, position.y + 10, target.style.backgroundColor)
                 target.classList.remove('drop-enabled')
             }
             position.x = 0;
