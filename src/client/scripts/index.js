@@ -3,7 +3,6 @@ import "regenerator-runtime/runtime";
 
 import CustomRadio from './customRadio.js'
 import './dragAndDrop.js'
-import './domFuncs.js'
 import { updateClientData } from './serverCom.js'
 
 CustomRadio.refs = {};

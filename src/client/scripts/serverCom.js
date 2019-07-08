@@ -1,6 +1,6 @@
-import { replacePostIts } from './domFuncs.js'
+import './domFuncs.js'
 
-const HOST_URL = window.location.protocol + '//' + window.location.host;
+const HOST_URL = window.location.protocol + '//' + 'localhost:3000';//window.location.host;
 
 export function sendMessage(messageText, messageX, messageY, color) {
     if (messageText === '' || messageX < 0 || messageY < 0) {

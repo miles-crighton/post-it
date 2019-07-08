@@ -11483,20 +11483,20 @@ exports.updateClientData = updateClientData;
 exports.postMessage = postMessage;
 exports.requestData = requestData;
 
-var _domFuncs = require("./domFuncs.js");
+require("./domFuncs.js");
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
-var HOST_URL = window.location.protocol + '//' + window.location.host;
+var HOST_URL = window.location.protocol + '//' + 'localhost:3000'; //window.location.host;
 
 function sendMessage(messageText, messageX, messageY, color) {
   if (messageText === '' || messageX < 0 || messageY < 0) {
     console.log('Unable to post message - make sure message field is not empty.');
   } else {
     postMessage(messageText, messageX, messageY, color).then(function (res) {
-      return (0, _domFuncs.replacePostIts)(res);
+      return replacePostIts(res);
     }).catch(function (err) {
       console.error(err);
       alert('Could not reach server');
@@ -11506,7 +11506,7 @@ function sendMessage(messageText, messageX, messageY, color) {
 
 function updateClientData() {
   requestData().then(function (res) {
-    return (0, _domFuncs.replacePostIts)(res);
+    return replacePostIts(res);
   }).catch(function (err) {
     console.error(err);
     alert('Could not reach server');
@@ -11669,8 +11669,6 @@ var _customRadio = _interopRequireDefault(require("./customRadio.js"));
 
 require("./dragAndDrop.js");
 
-require("./domFuncs.js");
-
 var _serverCom = require("./serverCom.js");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -11687,7 +11685,7 @@ document.addEventListener('color-changed', function (e) {
   console.log("Post-it color changed to ".concat(e.detail.color));
   currentColor = e.detail.color;
 });
-},{"core-js/stable":"../../../node_modules/core-js/stable/index.js","regenerator-runtime/runtime":"../../../node_modules/regenerator-runtime/runtime.js","./customRadio.js":"../scripts/customRadio.js","./dragAndDrop.js":"../scripts/dragAndDrop.js","./domFuncs.js":"../scripts/domFuncs.js","./serverCom.js":"../scripts/serverCom.js"}],"../../../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"core-js/stable":"../../../node_modules/core-js/stable/index.js","regenerator-runtime/runtime":"../../../node_modules/regenerator-runtime/runtime.js","./customRadio.js":"../scripts/customRadio.js","./dragAndDrop.js":"../scripts/dragAndDrop.js","./serverCom.js":"../scripts/serverCom.js"}],"../../../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -11715,7 +11713,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49353" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50769" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
