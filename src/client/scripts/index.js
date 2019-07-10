@@ -8,7 +8,8 @@ import { updateClientData } from './serverCom.js'
 CustomRadio.refs = {};
 
 document.addEventListener('DOMContentLoaded', () => {
-    let colors = ['salmon', 'yellow', 'green']
+    //let colors = ['salmon', 'yellow', 'green']
+    let colors = ['#ffea71', '#75e3eb', '#fa8072']
     let draggedPostIt = document.querySelector('.drag-drop');
     new CustomRadio(document.getElementById('custom-radio'), colors)
     updateClientData()

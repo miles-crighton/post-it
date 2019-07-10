@@ -21479,7 +21479,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 _customRadio.default.refs = {};
 document.addEventListener('DOMContentLoaded', function () {
-  var colors = ['salmon', 'yellow', 'green'];
+  //let colors = ['salmon', 'yellow', 'green']
+  var colors = ['#ffea71', '#75e3eb', '#fa8072'];
   var draggedPostIt = document.querySelector('.drag-drop');
   new _customRadio.default(document.getElementById('custom-radio'), colors);
   (0, _serverCom.updateClientData)();
@@ -21518,7 +21519,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55580" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61927" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

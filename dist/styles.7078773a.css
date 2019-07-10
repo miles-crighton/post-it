@@ -23,11 +23,12 @@ footer {
   width: 100%; }
 
 footer div {
+  font-family: 'Indie Flower', cursive;
   width: 200px;
   text-align: center;
   background-color: white;
   border-radius: 5px;
-  background: #f0dc64; }
+  background: #f0e150; }
 
 #app {
   display: flex;
@@ -79,7 +80,7 @@ footer div {
   bottom: -20px;
   width: 30px;
   height: 25px;
-  background-color: #cd5d51; }
+  background: #cd5d51; }
 
 .post-it::after {
   content: '';
@@ -89,8 +90,7 @@ footer div {
   bottom: -1px;
   width: 10px;
   height: 10px;
-  background-color: red;
-  background: #f98679; }
+  background: inherit; }
 
 .message {
   font-family: 'Indie Flower', cursive;
