@@ -7,8 +7,8 @@ This was an experiment to test out node as well as what it's like to perform fro
 - Server side: Node.js
 - Web framework: Express
 - HTML Templating: Pug
-- Front-end: Vanilla CSS & JS
-- Additional Libs: interact.js
+- Front-end: SASS/JS
+- Additional Libs: interactjs, badwords
 
 ## To run locally
 Clone the repository onto your local machine.
@@ -30,10 +30,10 @@ You can then connect through a browser via local host on port 3000 (0.0.0.0:3000
 
 # Todo
 
-- [ ] Add json file store
-- [ ] Update styling
+- [ ] Add server-side json file store
+- [X] Update styling
 - [ ] Add client message data polling
-- [ ] Indicate connection error to user
-- [ ] Server-side profanity filter option
-- [ ] Add color options for post-its
+- [X] Indicate connection error to user
+- [ ] Client-side profanity filter option
+- [X] Add color options for post-its
 - [ ] Add Screenshot to Readme
