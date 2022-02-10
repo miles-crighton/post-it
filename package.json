@@ -26,7 +26,7 @@
     "@babel/core": "^7.5.0",
     "@babel/preset-env": "^7.5.0",
     "concurrently": "^4.1.1",
-    "node-sass": "^4.12.0",
+    "node-sass": "^7.0.0",
     "nodemon": "^1.19.1",
     "parcel-bundler": "^1.12.3",
     "pug": "^2.0.4"
